@@ -1,4 +1,7 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AdviceService } from './core/service/advice.service';
+import { Slip, IAdvice } from './domain/dto/advice.dto';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'genetorApp';
+
+  dataApi!: IAdvice;
+
+  constructor(private adviceService: AdviceService) { }
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.adviceService.getadvice().subscribe((res: HttpResponse<any>) => {
+      this.dataApi = res.body;
+    })
+  }
 }
