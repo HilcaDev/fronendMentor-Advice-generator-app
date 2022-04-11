@@ -11,7 +11,7 @@ export class AdviceService {
 
   constructor(private http: HttpClient) { }
 
-  getadvice(): Observable<HttpResponse<IAdvice>> {
-    return this.http.get<IAdvice>(`${environment.baseUrl}/advice`, { observe: 'response' })
+  getadvice(): Observable<HttpResponse<any>> {
+    return this.http.get<HttpResponse<any>>(`${environment.baseUrl}/advice`, { observe: 'response' })
   }
 }
