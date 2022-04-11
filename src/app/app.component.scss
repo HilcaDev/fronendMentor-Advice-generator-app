@@ -22,14 +22,14 @@
   font-size: 1.3rem;
   text-align: center;
   width: 25rem;
-  background-color: hsl(217, 19%, 24%);
+  background-color: var(--darkGrayish);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 
   &-title {
-    color: hsl(150, 100%, 66%);
+    color: var(--neonGreen);
     font-size: 0.7rem;
     letter-spacing: 3px;
     margin-top: 2rem;
@@ -38,7 +38,7 @@
 
   &-body {
     margin: 0 2rem 6rem;
-    color: hsl(193, 38%, 86%);
+    color: var(--lightCyan);
   }
 
   &-footer {
@@ -56,9 +56,9 @@
       height: 3rem;
       width: 3rem;
       border-radius: 50%;
-      background-color: hsl(150, 100%, 66%);
+      background-color: var(--neonGreen);
       @include middlePosition;
-      box-shadow: 0 0 1em hsl(150, 100%, 66%);
+      box-shadow: 0 0 1em var(--neonGreen);
 
       &-icon-dice {
         @include middlePosition;
