@@ -10,7 +10,7 @@ import { Slip, IAdvice } from './domain/dto/advice.dto';
 })
 export class AppComponent {
 
-  dataApi!: IAdvice;
+  dataApi!: IAdvice | null;
 
   constructor(private adviceService: AdviceService) { }
 
@@ -19,8 +19,6 @@ export class AppComponent {
   }
 
   getData(): void {
-    this.adviceService.getadvice().subscribe((res: HttpResponse<any>) => {
-      this.dataApi = res.body;
-    })
+    this.adviceService.getadvice().subscribe(({ body }) => this.dataApi = body)
   }
 }
